@@ -1,0 +1,7 @@
+{
+  "name": "Adega 3º Turno",
+  "description": "Adega do dede",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
