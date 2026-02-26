@@ -69,14 +69,16 @@ const App: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 pb-10">
+        {/* FOTO DE FUNDO DO TOPO: Troque o link abaixo em 'bg-[url(...)]' */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10 grayscale"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         
         <div className="relative z-10 text-center px-4 max-w-5xl flex flex-col items-center">
           <div className="mb-10 relative">
             <div className="absolute inset-0 bg-[#FFD90F]/15 blur-[100px] rounded-full"></div>
+            {/* LOGO DA ADEGA: Troque o link em 'src' para mudar o logo principal */}
             <img 
-              src="https://i.ibb.co/37zX2C8/homer-placeholder.png" 
+              src="/fotos/logo.jpg" 
               alt="Adega 3º Turno Logo" 
               className="w-56 h-56 md:w-80 md:h-80 object-contain relative logo-glow animate-floating"
             />
@@ -215,7 +217,8 @@ const App: React.FC = () => {
           <div className="relative w-full max-w-md bg-neutral-950 h-full flex flex-col shadow-2xl border-l border-[#FFD90F]/20">
             <div className="p-10 border-b border-white/5 flex items-center justify-between bg-black/50">
               <div className="flex items-center gap-4">
-                <img src="https://i.ibb.co/37zX2C8/homer-placeholder.png" className="w-10 h-10 object-contain" alt="" />
+                {/* LOGO NO CARRINHO: Troque o link em 'src' abaixo */}
+                <img src="/fotos/logo.jpg" className="w-10 h-10 object-contain" alt="" />
                 <div>
                   <h2 className="text-2xl font-serif">Carrinho</h2>
                   <p className="text-[9px] text-[#FFD90F] font-black uppercase tracking-[0.2em]">Entrega Madrugada</p>
@@ -362,6 +365,7 @@ const App: React.FC = () => {
               </div>
               
               <div className="w-full md:w-2/3 h-64 rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
+                {/* MAPA DE LOCALIZAÇÃO: Troque o link em 'src' abaixo pelo link de 'incorporar mapa' do Google Maps */}
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.344445354921!2d-46.1666666!3d-23.5222222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdd8765432109b%3A0x1234567890abcdef!2sRua%20Aniz%20Tanuz%20Resek%2C%20260%20-%20Conj.%20Res.%20Cocuera%2C%20Mogi%20das%20Cruzes%20-%20SP%2C%2008793-020!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
                   width="100%" 

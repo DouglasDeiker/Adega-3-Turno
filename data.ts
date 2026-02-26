@@ -1,6 +1,12 @@
 
 import { Product } from './types';
 
+/**
+ * GUIA DE MANUTENÇÃO DE FOTOS:
+ * Para trocar a foto de um produto:
+ * 1. Se a foto estiver na pasta 'public/fotos', use: imageUrl: '/fotos/nome-da-foto.jpg'
+ * 2. Se a foto for um link da internet, cole o link completo entre aspas.
+ */
 export const PRODUCTS: Product[] = [
   {
     id: '1',

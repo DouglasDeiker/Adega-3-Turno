@@ -21,6 +21,7 @@ const AboutModal: React.FC<AboutModalProps> = ({ onClose }) => {
         <div className="flex flex-col md:flex-row h-[85vh] md:h-auto max-h-[90vh] overflow-y-auto custom-scrollbar">
           {/* Image Section */}
           <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+            {/* FOTO DA SEÇÃO SOBRE: Troque o link em 'src' abaixo */}
             <img 
               src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1000" 
               alt="Adega 3º Turno" 

@@ -13,8 +13,9 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
         <div className="flex items-center gap-4">
           <div className="relative group">
             <div className="absolute -inset-1 bg-[#FFD90F] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            {/* LOGO DA NAVBAR: Troque o link em 'src' abaixo */}
             <img 
-              src="https://i.ibb.co/37zX2C8/homer-placeholder.png" 
+              src="/fotos/logo.jpg" 
               alt="Logo Adega 3º Turno" 
               className="relative w-14 h-14 object-contain logo-glow"
             />
