@@ -35,7 +35,17 @@ const EVENTS = [
 const EventsModal: React.FC<EventsModalProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" onClick={onClose}></div>
+      <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" onClick={onClose}>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="w-full h-full object-cover opacity-20 grayscale"
+        >
+          <source src="/videos/WhatsApp Video 2026-01-30 at 18.33.51111.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div className="relative w-full max-w-2xl bg-neutral-950 border border-white/10 rounded-[3rem] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
         <div className="p-8 md:p-12">
           <div className="flex items-center justify-between mb-10">

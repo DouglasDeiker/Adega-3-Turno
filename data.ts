@@ -3,9 +3,12 @@ import { Product } from './types';
 
 /**
  * GUIA DE MANUTENÇÃO DE FOTOS:
- * Para trocar a foto de um produto:
- * 1. Se a foto estiver na pasta 'public/fotos', use: imageUrl: '/fotos/nome-da-foto.jpg'
- * 2. Se a foto for um link da internet, cole o link completo entre aspas.
+ * 
+ * As fotos estão organizadas em pastas dentro de 'public/fotos/'.
+ * Para que a foto apareça no site, salve o arquivo com o nome exato indicado abaixo.
+ * 
+ * Exemplo: Para o Combo Absolut, salve a foto como 'absolut-redbull.jpg' 
+ * dentro da pasta 'public/fotos/combos/'.
  */
 export const PRODUCTS: Product[] = [
   {
@@ -14,7 +17,7 @@ export const PRODUCTS: Product[] = [
     description: '1L Vodka Absolut + 5 Latas de Red Bull + Balde de Gelo',
     price: 189.90,
     category: 'Combos',
-    imageUrl: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/fotos/combos/absolut-redbull.jpg', // Salve em: public/fotos/combos/
     featured: true
   },
   {
@@ -23,7 +26,7 @@ export const PRODUCTS: Product[] = [
     description: 'Cerveja premium belga, puro malte (330ml)',
     price: 8.50,
     category: 'Cervejas',
-    imageUrl: 'https://images.unsplash.com/photo-1618885472179-5e474019f2a9?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/cervejas/stella-long-neck.jpg' // Salve em: public/fotos/cervejas/
   },
   {
     id: '3',
@@ -31,7 +34,7 @@ export const PRODUCTS: Product[] = [
     description: 'Whisky escocês 12 anos (1L)',
     price: 159.00,
     category: 'Destilados',
-    imageUrl: 'https://images.unsplash.com/photo-1527281400828-ac737aefa5ad?auto=format&fit=crop&q=80&w=400',
+    imageUrl: '/fotos/destilados/black-label.jpg', // Salve em: public/fotos/destilados/
     featured: true
   },
   {
@@ -40,7 +43,7 @@ export const PRODUCTS: Product[] = [
     description: 'A clássica menta forte para seu narguile',
     price: 12.00,
     category: 'Tabacaria',
-    imageUrl: 'https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/tabacaria/zomo-mint.jpg' // Salve em: public/fotos/tabacaria/
   },
   {
     id: '10',
@@ -48,7 +51,7 @@ export const PRODUCTS: Product[] = [
     description: 'Carvão de coco de alta duração para arguile',
     price: 35.00,
     category: 'Tabacaria',
-    imageUrl: 'https://images.unsplash.com/photo-1621266450073-d866a0149959?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/tabacaria/carvao-coco.jpg' // Salve em: public/fotos/tabacaria/
   },
   {
     id: '4',
@@ -56,7 +59,7 @@ export const PRODUCTS: Product[] = [
     description: 'Cabernet Sauvignon Chileno (750ml)',
     price: 54.90,
     category: 'Vinhos',
-    imageUrl: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/vinhos/casillero-diablo.jpg' // Salve em: public/fotos/vinhos/
   },
   {
     id: '5',
@@ -64,7 +67,7 @@ export const PRODUCTS: Product[] = [
     description: 'Pacote com 6 latas (350ml cada)',
     price: 34.90,
     category: 'Cervejas',
-    imageUrl: 'https://images.unsplash.com/photo-1613531390494-08013890886c?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/cervejas/heineken-6pack.jpg' // Salve em: public/fotos/cervejas/
   },
   {
     id: '7',
@@ -72,7 +75,7 @@ export const PRODUCTS: Product[] = [
     description: 'Refrigerante sabor original',
     price: 12.90,
     category: 'Não Alcoólicos',
-    imageUrl: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/nao-alcoolicos/coca-2l.jpg' // Salve em: public/fotos/nao-alcoolicos/
   },
   {
     id: '11',
@@ -80,7 +83,7 @@ export const PRODUCTS: Product[] = [
     description: 'Chocolate ao leite com wafer (41.5g)',
     price: 4.50,
     category: 'Doces',
-    imageUrl: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/doces/kitkat.jpg' // Salve em: public/fotos/doces/
   },
   {
     id: '12',
@@ -88,7 +91,7 @@ export const PRODUCTS: Product[] = [
     description: 'Batata frita crocante (114g)',
     price: 14.90,
     category: 'Salgados',
-    imageUrl: 'https://images.unsplash.com/photo-1566478431375-d574b393c03b?auto=format&fit=crop&q=80&w=400'
+    imageUrl: '/fotos/salgados/pringles.jpg' // Salve em: public/fotos/salgados/
   }
 ];
 

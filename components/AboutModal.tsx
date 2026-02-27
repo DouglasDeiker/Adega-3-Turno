@@ -19,14 +19,17 @@ const AboutModal: React.FC<AboutModalProps> = ({ onClose }) => {
         </div>
 
         <div className="flex flex-col md:flex-row h-[85vh] md:h-auto max-h-[90vh] overflow-y-auto custom-scrollbar">
-          {/* Image Section */}
-          <div className="w-full md:w-1/2 h-64 md:h-auto relative">
-            {/* FOTO DA SEÇÃO SOBRE: Troque o link em 'src' abaixo */}
-            <img 
-              src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=1000" 
-              alt="Adega 3º Turno" 
+          {/* Video Section */}
+          <div className="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
               className="w-full h-full object-cover"
-            />
+            >
+              <source src="/videos/WhatsApp Video 2026-01-30 at 18.33.50.mp4" type="video/mp4" />
+            </video>
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent md:bg-gradient-to-r"></div>
           </div>
 
