@@ -7,78 +7,15 @@ interface DrinkPrepModalProps {
 
 const DrinkPrepModal: React.FC<DrinkPrepModalProps> = ({ onClose }) => {
   /**
-   * GUIA DE MANUTENÇÃO DE VÍDEOS (ARQUIVOS PRÓPRIOS):
-   * 1. Coloque seus vídeos na pasta 'public/videos/'
-   * 2. No campo 'url', use o caminho: '/videos/nome-do-seu-video.mp4'
-   * 3. Você também pode usar links diretos da internet.
+   * GUIA DE MANUTENÇÃO DE VÍDEOS:
+   * Para adicionar novos vídeos, basta subir o arquivo na pasta 'public/videos/'
+   * com o nome 'video1.mp4', 'video2.mp4', etc.
    */
-  const videos = [
-    {
-      title: "Nossa Adega #1",
-      url: "/videos/WhatsApp Video 2026-01-30 at 14145.mp4",
-      description: "Conheça nossa estrutura e variedade."
-    },
-    {
-      title: "Destaque da Semana",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.33.16.mp4",
-      description: "Os produtos mais pedidos do momento."
-    },
-    {
-      title: "Preparo de Drinks #1",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.33.20.mp4",
-      description: "Confira como preparamos os melhores combos da região."
-    },
-    {
-      title: "Preparo de Drinks #2",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.33.25.mp4",
-      description: "Dicas de mixologia para sua madrugada ser inesquecível."
-    },
-    {
-      title: "Nossa Adega #2",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.33.50.mp4",
-      description: "Um pouco do nosso estoque e cuidado com seus produtos."
-    },
-    {
-      title: "Ambiente e Energia",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.33.51111.mp4",
-      description: "A vibração do 3º Turno."
-    },
-    {
-      title: "Combos Exclusivos #1",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.34.0044444.mp4",
-      description: "Montagem dos nossos combos especiais."
-    },
-    {
-      title: "Combos Exclusivos #2",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.34.004578544.mp4",
-      description: "Qualidade e rapidez na entrega."
-    },
-    {
-      title: "Variedade de Bebidas",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.34.02855854458.mp4",
-      description: "Tudo o que você precisa para sua festa."
-    },
-    {
-      title: "Gelada de Verdade",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.34.0457457.mp4",
-      description: "Cervejas e destilados na temperatura ideal."
-    },
-    {
-      title: "Novidades no Estoque",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.34.06875758875.mp4",
-      description: "Sempre trazendo o melhor para você."
-    },
-    {
-      title: "Bastidores",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.34.42.mp4",
-      description: "O trabalho não para para garantir sua entrega rápida."
-    },
-    {
-      title: "Atendimento Rápido",
-      url: "/videos/WhatsApp Video 2026-01-30 at 18.34.494747.mp4",
-      description: "Nossa equipe pronta para te atender."
-    }
-  ];
+  const videos = Array.from({ length: 100 }, (_, i) => ({
+    title: `Vídeo #${i + 1}`,
+    url: `/videos/video${i + 1}.mp4`,
+    description: `Confira os bastidores e preparos da Adega 3º Turno.`
+  }));
 
   return (
     <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">

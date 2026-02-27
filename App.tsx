@@ -80,7 +80,7 @@ const App: React.FC = () => {
             playsInline 
             className="w-full h-full object-cover opacity-30 grayscale"
           >
-            <source src="/videos/WhatsApp Video 2026-01-30 at 18.33.16.mp4" type="video/mp4" />
+            <source src="/videos/topo.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         </div>
