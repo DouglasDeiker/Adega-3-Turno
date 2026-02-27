@@ -1,6 +1,6 @@
 {
   "name": "Adega 3º Turno",
-  "description": "Adega do dede",
+  "description": "Adega do dede finalizado",
   "requestFramePermissions": [
     "geolocation"
   ]

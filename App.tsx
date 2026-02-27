@@ -79,11 +79,16 @@ const App: React.FC = () => {
           <div className="mb-10 relative">
             <div className="absolute inset-0 bg-[#FFD90F]/15 blur-[100px] rounded-full"></div>
             {/* LOGO DA ADEGA: Troque o link em 'src' para mudar o logo principal */}
-            <img 
-              src="/fotos/logo.jpg" 
-              alt="Adega 3º Turno Logo" 
-              className="w-56 h-56 md:w-80 md:h-80 object-contain relative drop-shadow-[0_0_25px_rgba(255,217,15,0.3)] animate-floating"
-            />
+            <div className="w-64 h-64 md:w-[400px] md:h-[400px] relative animate-floating flex items-center justify-center">
+              <div className="absolute inset-0 bg-[#FFD90F]/20 blur-[80px] rounded-full"></div>
+              <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#FFD90F]/30 relative z-10 shadow-[0_0_50px_rgba(255,217,15,0.2)]">
+                <img 
+                  src="/fotos/logo.jpg" 
+                  alt="Adega 3º Turno Logo" 
+                  className="w-full h-full object-cover scale-[1.4] relative"
+                />
+              </div>
+            </div>
           </div>
           
           <h2 className="text-[#FFD90F] font-black tracking-[0.6em] text-[10px] mb-12 uppercase">Delivery somente em Mogi das Cruzes • Taxa sob consulta via WhatsApp</h2>
@@ -113,43 +118,42 @@ const App: React.FC = () => {
             <div className="h-px bg-gradient-to-r from-[#FFD90F]/40 to-transparent flex-1"></div>
           </div>
 
-          <div className="flex flex-col gap-8 w-full">
-            <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
-              <div className="flex flex-col gap-4 w-full lg:flex-1">
-                {/* Botão Tudo - Grande e no Topo */}
-                <button 
-                  onClick={() => setSelectedCategory('Tudo')}
-                  className={`w-full px-6 py-5 rounded-2xl transition-all text-[11px] font-black uppercase tracking-[0.4em] ${selectedCategory === 'Tudo' ? 'bg-[#FFD90F] text-black shadow-2xl shadow-[#FFD90F]/30 scale-[1.01]' : 'bg-neutral-900 border border-white/5 hover:border-[#FFD90F]/30'}`}
-                >
-                  Tudo
-                </button>
-                
-                {/* Outras Categorias - Grid Organizado */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
-                  {CATEGORIES.map(cat => (
-                    <button 
-                      key={cat.name}
-                      onClick={() => setSelectedCategory(cat.name as Category)}
-                      className={`px-4 py-4 rounded-2xl transition-all text-[9px] font-black uppercase tracking-widest flex items-center justify-center gap-2 border ${selectedCategory === cat.name ? 'bg-[#FFD90F] text-black border-[#FFD90F] shadow-lg shadow-[#FFD90F]/20' : 'bg-neutral-900 border-white/5 hover:border-[#FFD90F]/30'}`}
-                    >
-                      <span className="text-base">{cat.icon}</span>
-                      <span className="truncate">{cat.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
+          <div className="flex flex-col gap-6 w-full">
+            {/* Barra de Busca - Agora no Topo */}
+            <div className="relative w-full">
+              <input 
+                type="text" 
+                placeholder="Qual o desejo de hoje?"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-neutral-900 border border-white/5 rounded-2xl px-14 py-5 text-sm focus:outline-none focus:border-[#FFD90F] transition-all shadow-2xl placeholder:text-neutral-600"
+              />
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 absolute left-5 top-1/2 -translate-y-1/2 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
 
-              <div className="relative w-full md:w-80">
-                <input 
-                  type="text" 
-                  placeholder="Qual o desejo de hoje?"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-neutral-900 border border-white/5 rounded-2xl px-14 py-4 text-sm focus:outline-none focus:border-[#FFD90F] transition-all shadow-2xl"
-                />
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 absolute left-5 top-1/2 -translate-y-1/2 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+            <div className="flex flex-col gap-4 w-full">
+              {/* Botão Tudo - Grande e no Topo */}
+              <button 
+                onClick={() => setSelectedCategory('Tudo')}
+                className={`w-full px-6 py-5 rounded-2xl transition-all text-[11px] font-black uppercase tracking-[0.4em] ${selectedCategory === 'Tudo' ? 'bg-[#FFD90F] text-black shadow-2xl shadow-[#FFD90F]/30 scale-[1.01]' : 'bg-neutral-900 border border-white/5 hover:border-[#FFD90F]/30'}`}
+              >
+                Tudo
+              </button>
+              
+              {/* Outras Categorias - Grid Organizado */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
+                {CATEGORIES.map(cat => (
+                  <button 
+                    key={cat.name}
+                    onClick={() => setSelectedCategory(cat.name as Category)}
+                    className={`px-4 py-4 rounded-2xl transition-all text-[9px] font-black uppercase tracking-widest flex items-center justify-center gap-2 border ${selectedCategory === cat.name ? 'bg-[#FFD90F] text-black border-[#FFD90F] shadow-lg shadow-[#FFD90F]/20' : 'bg-neutral-900 border-white/5 hover:border-[#FFD90F]/30'}`}
+                  >
+                    <span className="text-base">{cat.icon}</span>
+                    <span className="truncate">{cat.name}</span>
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -175,13 +179,7 @@ const App: React.FC = () => {
                 )}
                 <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center p-8 text-center backdrop-blur-[2px]">
                    <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                      <p className="text-[11px] font-medium text-neutral-300 mb-6 leading-relaxed uppercase tracking-tighter">{product.description}</p>
-                      <button 
-                        onClick={() => addToCart(product)}
-                        className="bg-[#FFD90F] text-black font-black px-10 py-3 rounded-2xl hover:bg-white transition-all shadow-2xl"
-                      >
-                        Pedir
-                      </button>
+                      <p className="text-[11px] font-medium text-neutral-300 leading-relaxed uppercase tracking-tighter">{product.description}</p>
                    </div>
                 </div>
               </div>
@@ -228,7 +226,9 @@ const App: React.FC = () => {
             <div className="p-10 border-b border-white/5 flex items-center justify-between bg-black/50">
               <div className="flex items-center gap-4">
                 {/* LOGO NO CARRINHO: Troque o link em 'src' abaixo */}
-                <img src="/fotos/logo.jpg" className="w-10 h-10 object-contain" alt="" />
+                <div className="w-14 h-14 rounded-full overflow-hidden border border-[#FFD90F]/30 shadow-lg">
+                  <img src="/fotos/logo.jpg" className="w-full h-full object-cover scale-[1.4]" alt="" />
+                </div>
                 <div>
                   <h2 className="text-2xl font-serif">Carrinho</h2>
                   <p className="text-[9px] text-[#FFD90F] font-black uppercase tracking-[0.2em]">Entrega Madrugada</p>

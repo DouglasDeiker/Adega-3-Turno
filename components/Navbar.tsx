@@ -14,11 +14,13 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-[#FFD90F] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             {/* LOGO DA NAVBAR: Troque o link em 'src' abaixo */}
-            <img 
-              src="/fotos/logo.jpg" 
-              alt="Logo Adega 3º Turno" 
-              className="relative w-14 h-14 object-contain drop-shadow-[0_0_8px_rgba(255,217,15,0.4)]"
-            />
+            <div className="w-14 h-14 rounded-full overflow-hidden border border-[#FFD90F]/30 shadow-lg">
+              <img 
+                src="/fotos/logo.jpg" 
+                alt="Logo Adega 3º Turno" 
+                className="w-full h-full object-cover scale-[1.4]"
+              />
+            </div>
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-xl md:text-2xl tracking-tighter leading-none">Adega</span>
