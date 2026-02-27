@@ -62,8 +62,9 @@ O ID é sempre o **prefixo** (combo, cerveja, destilado, etc) seguido de um **h�
 
 ---
 
-## 4. Como Mudar a Logo
+## 4. Como Mudar a Logo e o Ícone da Aba (Favicon)
 - Suba em `public/fotos/` com o nome `logo.jpg`.
+- Esta mesma imagem será usada tanto no topo do site quanto no ícone que aparece na aba do navegador.
 
 ---
 
