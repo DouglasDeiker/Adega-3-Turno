@@ -1,5 +1,5 @@
 
-export type Category = 'Cervejas' | 'Vinhos' | 'Destilados' | 'Combos' | 'Narguile' | 'Não Alcoólicos' | 'Petiscos';
+export type Category = 'Cervejas' | 'Vinhos' | 'Destilados' | 'Combos' | 'Tabacaria' | 'Não Alcoólicos' | 'Petiscos' | 'Doces' | 'Salgados';
 
 export interface Product {
   id: string;

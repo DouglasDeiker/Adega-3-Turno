@@ -5,6 +5,7 @@ import { PRODUCTS, CATEGORIES } from './data';
 import Navbar from './components/Navbar';
 import AboutModal from './components/AboutModal';
 import EventsModal from './components/EventsModal';
+import DrinkPrepModal from './components/DrinkPrepModal';
 
 const App: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | 'Tudo'>('Tudo');
@@ -12,6 +13,7 @@ const App: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
+  const [isDrinkPrepOpen, setIsDrinkPrepOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProducts = useMemo(() => {
@@ -80,19 +82,19 @@ const App: React.FC = () => {
             <img 
               src="/fotos/logo.jpg" 
               alt="Adega 3º Turno Logo" 
-              className="w-56 h-56 md:w-80 md:h-80 object-contain relative logo-glow animate-floating"
+              className="w-56 h-56 md:w-80 md:h-80 object-contain relative drop-shadow-[0_0_25px_rgba(255,217,15,0.3)] animate-floating"
             />
           </div>
           
           <h2 className="text-[#FFD90F] font-black tracking-[0.6em] text-[10px] mb-12 uppercase">Delivery somente em Mogi das Cruzes • Taxa sob consulta via WhatsApp</h2>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
-            <a 
-              href="#catalogo"
+            <button 
+              onClick={() => setIsDrinkPrepOpen(true)}
               className="w-full sm:w-auto px-12 py-5 bg-[#FFD90F] text-black font-black rounded-2xl hover:bg-[#ffe65c] transition-all transform hover:scale-105 shadow-[0_15px_40px_rgba(255,217,15,0.25)] uppercase tracking-[0.2em] text-xs text-center"
             >
-              Cardápio Completo
-            </a>
+              Preparo de bebidas
+            </button>
             <button 
               onClick={() => setIsEventsOpen(true)}
               className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/10 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all transform hover:scale-105 uppercase tracking-[0.2em] text-xs text-center"
@@ -111,36 +113,44 @@ const App: React.FC = () => {
             <div className="h-px bg-gradient-to-r from-[#FFD90F]/40 to-transparent flex-1"></div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
-            <div className="flex flex-wrap gap-3 w-full md:w-auto">
-              <button 
-                onClick={() => setSelectedCategory('Tudo')}
-                className={`flex-1 sm:flex-none px-6 py-3.5 rounded-2xl whitespace-nowrap transition-all text-[10px] font-black uppercase tracking-widest ${selectedCategory === 'Tudo' ? 'bg-[#FFD90F] text-black shadow-xl shadow-[#FFD90F]/20' : 'bg-neutral-900 border border-white/5 hover:border-[#FFD90F]/30'}`}
-              >
-                Tudo
-              </button>
-              {CATEGORIES.map(cat => (
+          <div className="flex flex-col gap-8 w-full">
+            <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
+              <div className="flex flex-col gap-4 w-full lg:flex-1">
+                {/* Botão Tudo - Grande e no Topo */}
                 <button 
-                  key={cat.name}
-                  onClick={() => setSelectedCategory(cat.name as Category)}
-                  className={`flex-1 sm:flex-none px-6 py-3.5 rounded-2xl whitespace-nowrap transition-all text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-3 ${selectedCategory === cat.name ? 'bg-[#FFD90F] text-black shadow-xl shadow-[#FFD90F]/20' : 'bg-neutral-900 border border-white/5 hover:border-[#FFD90F]/30'}`}
+                  onClick={() => setSelectedCategory('Tudo')}
+                  className={`w-full px-6 py-5 rounded-2xl transition-all text-[11px] font-black uppercase tracking-[0.4em] ${selectedCategory === 'Tudo' ? 'bg-[#FFD90F] text-black shadow-2xl shadow-[#FFD90F]/30 scale-[1.01]' : 'bg-neutral-900 border border-white/5 hover:border-[#FFD90F]/30'}`}
                 >
-                  <span className="text-lg">{cat.icon}</span> {cat.name}
+                  Tudo
                 </button>
-              ))}
-            </div>
+                
+                {/* Outras Categorias - Grid Organizado */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
+                  {CATEGORIES.map(cat => (
+                    <button 
+                      key={cat.name}
+                      onClick={() => setSelectedCategory(cat.name as Category)}
+                      className={`px-4 py-4 rounded-2xl transition-all text-[9px] font-black uppercase tracking-widest flex items-center justify-center gap-2 border ${selectedCategory === cat.name ? 'bg-[#FFD90F] text-black border-[#FFD90F] shadow-lg shadow-[#FFD90F]/20' : 'bg-neutral-900 border-white/5 hover:border-[#FFD90F]/30'}`}
+                    >
+                      <span className="text-base">{cat.icon}</span>
+                      <span className="truncate">{cat.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-            <div className="relative w-full md:w-80">
-              <input 
-                type="text" 
-                placeholder="Qual o desejo de hoje?"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-neutral-900 border border-white/5 rounded-2xl px-14 py-4 text-sm focus:outline-none focus:border-[#FFD90F] transition-all shadow-2xl"
-              />
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 absolute left-5 top-1/2 -translate-y-1/2 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <div className="relative w-full md:w-80">
+                <input 
+                  type="text" 
+                  placeholder="Qual o desejo de hoje?"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full bg-neutral-900 border border-white/5 rounded-2xl px-14 py-4 text-sm focus:outline-none focus:border-[#FFD90F] transition-all shadow-2xl"
+                />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 absolute left-5 top-1/2 -translate-y-1/2 text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -303,6 +313,10 @@ const App: React.FC = () => {
 
       {isEventsOpen && (
         <EventsModal onClose={() => setIsEventsOpen(false)} />
+      )}
+
+      {isDrinkPrepOpen && (
+        <DrinkPrepModal onClose={() => setIsDrinkPrepOpen(false)} />
       )}
 
       {/* Footer */}

@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, onCartClick }) => {
             <img 
               src="/fotos/logo.jpg" 
               alt="Logo Adega 3º Turno" 
-              className="relative w-14 h-14 object-contain logo-glow"
+              className="relative w-14 h-14 object-contain drop-shadow-[0_0_8px_rgba(255,217,15,0.4)]"
             />
           </div>
           <div className="flex flex-col">

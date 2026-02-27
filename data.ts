@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     name: 'Essência Zomo Strong Mint',
     description: 'A clássica menta forte para seu narguile',
     price: 12.00,
-    category: 'Narguile',
+    category: 'Tabacaria',
     imageUrl: 'https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&q=80&w=400'
   },
   {
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
     name: 'Carvão Coco Brasil 1kg',
     description: 'Carvão de coco de alta duração para arguile',
     price: 35.00,
-    category: 'Narguile',
+    category: 'Tabacaria',
     imageUrl: 'https://images.unsplash.com/photo-1621266450073-d866a0149959?auto=format&fit=crop&q=80&w=400'
   },
   {
@@ -73,14 +73,32 @@ export const PRODUCTS: Product[] = [
     price: 12.90,
     category: 'Não Alcoólicos',
     imageUrl: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: '11',
+    name: 'Chocolate KitKat',
+    description: 'Chocolate ao leite com wafer (41.5g)',
+    price: 4.50,
+    category: 'Doces',
+    imageUrl: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=400'
+  },
+  {
+    id: '12',
+    name: 'Batata Pringles Original',
+    description: 'Batata frita crocante (114g)',
+    price: 14.90,
+    category: 'Salgados',
+    imageUrl: 'https://images.unsplash.com/photo-1566478431375-d574b393c03b?auto=format&fit=crop&q=80&w=400'
   }
 ];
 
 export const CATEGORIES: { name: string; icon: string }[] = [
   { name: 'Combos', icon: '🔥' },
   { name: 'Cervejas', icon: '🍺' },
-  { name: 'Narguile', icon: '💨' },
+  { name: 'Tabacaria', icon: '💨' },
   { name: 'Destilados', icon: '🥃' },
   { name: 'Vinhos', icon: '🍷' },
   { name: 'Não Alcoólicos', icon: '🥤' },
+  { name: 'Doces', icon: '🍫' },
+  { name: 'Salgados', icon: '🍟' },
 ];
