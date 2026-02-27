@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import AboutModal from './components/AboutModal';
 import EventsModal from './components/EventsModal';
 import DrinkPrepModal from './components/DrinkPrepModal';
+import NewsModal from './components/NewsModal';
 
 const App: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category | 'Tudo'>('Tudo');
@@ -14,6 +15,7 @@ const App: React.FC = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
   const [isDrinkPrepOpen, setIsDrinkPrepOpen] = useState(false);
+  const [isNewsOpen, setIsNewsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProducts = useMemo(() => {
@@ -115,6 +117,12 @@ const App: React.FC = () => {
               className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/10 text-white font-black rounded-2xl hover:bg-white hover:text-black transition-all transform hover:scale-105 uppercase tracking-[0.2em] text-xs text-center"
             >
               Eventos
+            </button>
+            <button 
+              onClick={() => setIsNewsOpen(true)}
+              className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-[#FFD90F]/30 text-[#FFD90F] font-black rounded-2xl hover:bg-[#FFD90F] hover:text-black transition-all transform hover:scale-105 uppercase tracking-[0.2em] text-xs text-center"
+            >
+              Novidades
             </button>
           </div>
         </div>
@@ -327,6 +335,10 @@ const App: React.FC = () => {
 
       {isDrinkPrepOpen && (
         <DrinkPrepModal onClose={() => setIsDrinkPrepOpen(false)} />
+      )}
+
+      {isNewsOpen && (
+        <NewsModal onClose={() => setIsNewsOpen(false)} />
       )}
 
       {/* Footer */}

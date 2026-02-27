@@ -58,7 +58,8 @@ O ID é sempre o **prefixo** (combo, cerveja, destilado, etc) seguido de um **h�
 ## 3. Como Mudar Vídeos
 - **Vídeo do Topo:** Suba em `public/videos/` com o nome `topo.mp4`.
 - **Vídeo de Eventos:** Suba em `public/videos/` com o nome `ambiente.mp4`.
-- **Vídeos de Preparo:** Suba em `public/videos/` com os nomes `video1.mp4`, `video2.mp4`...
+- **Vídeos de Preparo:** Suba em `public/videos/` com os nomes `video1.mp4`, `video2.mp4`... até `video100.mp4`.
+- **Vídeos de Novidades:** Suba em `public/videos/` com os nomes `novidade1.mp4`, `novidade2.mp4`... até `novidade100.mp4`.
 
 ---
 
